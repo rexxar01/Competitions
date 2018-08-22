@@ -1,10 +1,12 @@
-| Wheel Number | DIR | PWM | Reversed |
-| :------------: | :------------: | :-------: | :----: |
-| 1 | 53 | 10 | False |
-| 2 | 49 | 7 | False |
-| 3 | 47 | 8 | False |
-| 4 | 51 | 9 | True  |
-## Base
+| Wheel Number | Position | DIR | PWM | Reversed |
+| :-----: | :----: | :-----: | :-------: | :----: |
+| 1 | Top Right    | 53 | 10 | False |
+| 2 | Top Left     | 49 | 7 | False |
+| 3 | Bottom Left  | 47 | 8 | False |
+| 4 | Bottom Right | 51 | 9 | True  |
+# Base
+
+## Base motors
 **Motor Drivers**: Cytron MDD10A REV2.0<br>
 **Motor Driver convention logic**: A is LOW, B is HIGH
 ### MOTOR DRIVER 1
