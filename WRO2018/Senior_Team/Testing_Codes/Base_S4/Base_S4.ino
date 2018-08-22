@@ -1,3 +1,8 @@
+/*
+DO NOT USE
+  * Code ARCHIVED
+Use the FourSBase_Test1 instead
+*/
 #include <S4Base.h>
 
 int S4BASE_PINOUT_PWMs[] = {5, 8, 7, 6};
