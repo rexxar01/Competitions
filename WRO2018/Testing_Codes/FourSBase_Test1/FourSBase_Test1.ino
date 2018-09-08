@@ -13,7 +13,7 @@ void setup() {
   Serial.println("Going into loop...");
 }
 
-int pwm = 0, angle = 0;
+int pwm = 100, angle = -180;
 
 void loop() {
   // put your main code here, to run repeatedly:
