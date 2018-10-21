@@ -40,6 +40,8 @@ public class MainActivity extends AppCompatActivity implements JoystickView.Joys
     private ArrayAdapter<String> mBTArrayAdapter;
     private ListView mDevicesListView;
     private CheckBox mLED1;
+    private Button mClockwiseBtn;
+    private Button mAnticlockwiseBtn;
     double x;
     double y;
 
@@ -65,6 +67,8 @@ public class MainActivity extends AppCompatActivity implements JoystickView.Joys
         mOffBtn = (Button)findViewById(R.id.off);
         mDiscoverBtn = (Button)findViewById(R.id.discover);
         mListPairedDevicesBtn = (Button)findViewById(R.id.PairedBtn);
+        mClockwiseBtn = (Button)findViewById(R.id.clock);
+        mAnticlockwiseBtn = (Button)findViewById(R.id.anticlock);
 
 
         mBTArrayAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1);
@@ -142,6 +146,29 @@ public class MainActivity extends AppCompatActivity implements JoystickView.Joys
                 }
             });
         }
+        mClockwiseBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Log.d("rotate","clockwise");
+                if(mConnectedThread != null){
+                    mConnectedThread.write("c");
+                    mConnectedThread.write("c");
+                }
+            }
+        });
+        mAnticlockwiseBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Log.d("rotate","anticlockwise");
+                if(mConnectedThread != null){
+                    mConnectedThread.write("a");
+                    mConnectedThread.write("a");
+
+                }
+            }
+        });
+
+
     }
     @Override
     public void onJoystickMoved(float xPercent, float yPercent, int id) {
@@ -162,6 +189,10 @@ public class MainActivity extends AppCompatActivity implements JoystickView.Joys
                 //Log.d("character is",""+xval);
                 //int pwm = (int)(Math.sqrt(x*x+y*y)*255);
 
+
+                //String output;
+                //output="#"+(int)xval+"#"+(int)yval+'\0';
+                //Log.d("Output is",output);
                 if(mConnectedThread != null) {
                     synchronized(this){
                         mConnectedThread.write("" + xval);
@@ -386,3 +417,4 @@ public class MainActivity extends AppCompatActivity implements JoystickView.Joys
         }
     }
 }
+
