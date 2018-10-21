@@ -63,13 +63,30 @@
             android:layout_centerHorizontal="true"
             android:layout_alignTop="@+id/checkboxLED1" />
     </LinearLayout>
-    <Button
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Bluetooth ON"
-        android:id="@+id/scan"
-        android:layout_centerVertical="true"
-        android:layout_toStartOf="@+id/off" />
+        android:orientation="horizontal">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bluetooth ON"
+            android:id="@+id/scan"
+            android:layout_centerVertical="true"
+            android:layout_toStartOf="@+id/off" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="clockwise"
+            android:id = "@+id/clock"/>
+
+        <Button
+            android:id="@+id/anticlock"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="anticlock" />
+    </LinearLayout>
+
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
